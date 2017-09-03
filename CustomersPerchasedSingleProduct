@@ -1,0 +1,1 @@
+select o.customerid from orders2 o,(select productid,count(*) as cnt from orders2 group by(productid)) o2 where o2.productid=o.productid and 1=o2.cnt;
