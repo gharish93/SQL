@@ -1,0 +1,1 @@
+select o.productid,o.cnt from (select productid,count(*) as cnt from orders2 group by(productid)) o where cnt in (select max(o3.cnt2) from (select count(*) as cnt2 from orders2 group by(productid)) o3);
